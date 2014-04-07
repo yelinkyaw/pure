@@ -19,7 +19,7 @@
     <div class="sidebar sidebar-article pure-u">
         <header class="header-article">
             <hgroup>
-                <a href="{{ SITEURL }}/{{ article.author.url }}" title="See posts by {{ article.author }}">
+                <a href="{{ SITEURL }}/">
                     <img class="article-avatar" alt="{{ article.author }}" src="{{ PROFILE_IMAGE_URL }}">
                 </a>
                 <h2 class="article-info">{{ article.author }}</h2>
@@ -34,15 +34,17 @@
         <div class="content">
             <section class="post">
                 <header class="post-header">
-                    <h1>{{ article.title }}</h1>
+                    <h1><span class="post-myanmar">{{ article.title }}</span></h1>
                         <p class="post-meta">
                             // under {% for tag in article.tags %}
-                                <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+                                <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}"><span class="post-myanmar">{{ tag }}</span></a>
                             {% endfor %}
                         </p>
                 </header>
             </section>
+            <span class="post-myanmar">
             {{ article.content }}
+            </span>
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
             {% if DISQUS_SITENAME %}
