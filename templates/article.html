@@ -35,11 +35,16 @@
             <section class="post">
                 <header class="post-header">
                     <h1>{{ article.title }}</h1>
+							<p class="post-meta">
+                            // Under <a href="{{ SITEURL }}/{{ article.category.url }}"><span class="post-myanmar">{{ article.category }}</span></a>
+							</p>
+							{% if article.tags %}
                         <p class="post-meta">
-                            // under {% for tag in article.tags %}
+                            // Tags {% for tag in article.tags %}
                                 <a class="post-category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
                             {% endfor %}
                         </p>
+							{% endif %}
                 </header>
             </section>
             {{ article.content }}
