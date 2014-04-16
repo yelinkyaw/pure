@@ -55,9 +55,8 @@
 							{% endif %}
                 </header>
             </section>
-            <span class="post-myanmar">
-            {{ article.content }}
-            </span>
+            <span class="post-myanmar">{{ article.content }}</span>
+            <div class="fb-like" data-href="{{ SITEURL }}/{{ article.url }}" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
             <div class="hr"></div>
             <a href="#" class="go-top">Go Top</a>
             {% if DISQUS_SITENAME %}
