@@ -1,5 +1,14 @@
 {% extends 'index.html' %}
 {% block title %}{{ page.title|striptags }} // {{ super() }}{% endblock title %}
+{% block facebook %}
+	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:site_name" content="{{ SITENAME }}"/>
+	<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+	<meta property="og:description" content="{{page.summary|striptags}}" />
+	<meta property="og:image" content="{{ SITEURL }}{{PROFILE_IMAGE_URL}}" />
+	<meta property="og:type" content="article" />
+	<meta property="fb:app_id" content="{{FACEBOOK_APP_ID}}" />
+{% endblock facebook %}
 
 {% block content %}
 <div class="pure-g-r" id="layout">

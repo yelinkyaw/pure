@@ -18,6 +18,15 @@
         <link rel="alternate" href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" title="{{ SITENAME }} RSS Feed"/>
     {% endif %}
 
+    {% block facebook %}
+        <meta property="og:title" content="{{ SITENAME }}: {{ TAGLINE }}" />
+        <meta property="og:site_name" content="{{ SITENAME }}"/>
+        <meta property="og:url" content="{{SITEURL}}" />
+        <meta property="og:description" content="{{ TAGLINE }}" />
+        <meta property="og:image" content="{{ SITEURL }}{{PROFILE_IMAGE_URL}}" />
+        <meta property="fb:app_id" content="{{FACEBOOK_APP_ID}}" />
+    {% endblock facebook %}
+	
     {% block head %}
         <title>{% block title %}{{ SITENAME }} // {{ TAGLINE }}{% endblock title %}</title>
     {% endblock head %}
