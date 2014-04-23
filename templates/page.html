@@ -5,7 +5,11 @@
 	<meta property="og:site_name" content="{{ SITENAME }}"/>
 	<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
 	<meta property="og:description" content="{{page.summary|striptags}}" />
+	{% if page.og_image %}
+	<meta property="og:image" content="{{page.og_image}}" />
+	{% else %}
 	<meta property="og:image" content="{{ SITEURL }}{{PROFILE_IMAGE_URL}}" />
+	{% endif %}
 	<meta property="og:type" content="article" />
 	<meta property="fb:app_id" content="{{FACEBOOK_APP_ID}}" />
 {% endblock facebook %}
